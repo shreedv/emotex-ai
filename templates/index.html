@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMOTEX - AI Sentiment</title>
+    
+    <!-- NextJS / Shadcn vibe fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <main class="bento-container">
+        <!-- BENTO 1: Hero & Input -->
+        <div class="bento-card bento-hero">
+            <div class="hero-header">
+                <div class="flex-between" style="margin-bottom: 1rem;">
+                    <span class="mono-badge">AI PORTAL</span>
+                    <div class="network-status">
+                        <span class="pulse-dot"></span>
+                        <span class="mono-text" style="font-size: 0.65rem; color: #5eead4;">NETWORK_SYNCED</span>
+                    </div>
+                </div>
+                <h1 class="gradient-text">EMOTEX.</h1>
+                <p class="subtitle">Offline Sentiment <span class="highlight">//</span> Text Analyzer</p>
+            </div>
+            
+            <div class="input-area">
+                <form id="text-form">
+                    <textarea id="user-text" name="user_text" placeholder="Type a sentence to analyze its emotional signature..." required></textarea>
+                    <button type="submit" class="btn-primary" id="analyze-btn">
+                        <span class="btn-text">Execute Analysis</span>
+                        <span class="loader hidden" id="btn-loader"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- BENTO 2: Result Accent Panel -->
+        <div class="bento-card bento-accent" id="result-accent">
+            <div class="accent-top">
+                <span class="mono-label">OLLAMA / GEMMA</span>
+                <span class="status-dot"></span>
+            </div>
+            
+            <div class="accent-body hidden" id="result-body">
+                <h2>EMOTION / <span class="capitalize" id="detected-emotion"></span></h2>
+                <div class="confidence-row flex-between">
+                    <p style="font-size: 0.9em; font-weight: 600;">Confidence Match:</p>
+                    <p class="score-number"><span id="confidence-score">0</span>%</p>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" id="confidence-fill"></div>
+                </div>
+            </div>
+            
+            <div class="accent-placeholder" id="result-placeholder">
+                <div class="gear-icon">⚙️</div>
+                <h3>WAITING</h3>
+                <p class="mono-text">Awake and Ready.</p>
+            </div>
+        </div>
+
+        <!-- BENTO 3: Reasoning Box -->
+        <div class="bento-card bento-reasoning hidden" id="reasoning-card">
+            <div class="bento-header flex-between">
+                <h2>RATIONALE.</h2>
+                <span class="mono-text dim">from Model</span>
+            </div>
+            <div class="reasoning-text-box">
+                <p id="ai-reasoning">Awaiting context input...</p>
+            </div>
+        </div>
+
+        <!-- BENTO 4: Chart Area -->
+        <div class="bento-card bento-chart hidden" id="chart-card">
+            <div class="bento-header">
+                <h2 style="font-size: 1.2rem;">DISTRIBUTION.</h2>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="emotionChart"></canvas>
+            </div>
+        </div>
+
+        <!-- BENTO 5: History -->
+        <div class="bento-card bento-history hidden" id="history-card">
+            <div class="bento-header">
+                <h2>DATA LOGS.</h2>
+            </div>
+            <div class="table-wrapper">
+                <table id="history-table">
+                    <thead>
+                        <tr>
+                            <th>HM</th>
+                            <th>CONTEXT</th>
+                            <th>LABEL</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-body">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

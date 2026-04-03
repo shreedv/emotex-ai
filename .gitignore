@@ -1,0 +1,11 @@
+__pycache__/
+venv/
+env/
+.env
+emotions.db
+test_free_api.py
+test_free_api2.py
+test_free_api3.py
+test_analyze.py
+test_hf.py
+test_hf_precise.py
