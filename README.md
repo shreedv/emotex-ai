@@ -1,9 +1,10 @@
 # EmoTex – Offline Text Emotion Analyzer
 
-This repository contains an offline emotion analysis web application built with Python, Flask, Ollama (local LLM), SQLite, and Chart.js. It's designed for privacy-conscious use with zero cloud dependency.
+This repository contains an offline emotion analysis web application built with Python, Flask, Ollama (local LLM), SQLite, and Chart.js. It's designed for privacy-conscious use with zero cloud dependencies.
 
 ## Live Demo
-Click here to view the project emotex-ai.onrender.com
+
+[Click here to view the project](https://emotex-ai.onrender.com)
 
 ## Features
 
