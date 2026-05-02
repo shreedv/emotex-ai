@@ -2,6 +2,9 @@
 
 This repository contains an offline emotion analysis web application built with Python, Flask, Ollama (local LLM), SQLite, and Chart.js. It's designed for privacy-conscious use with zero cloud dependency.
 
+## Live Demo
+Click here to view the project emotex-ai.onrender.com
+
 ## Features
 
 - Uses the Gemma3:1B local language model via Ollama to detect emotions (happiness, sadness, anger, fear, sarcasm).
