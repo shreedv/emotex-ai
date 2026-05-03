@@ -4,7 +4,7 @@ This repository contains an offline emotion analysis web application built with 
 
 ## Live Demo
 
-[Click here to view the project](https://emotex-ai.onrender.com)
+**🔗 [emotex-ai.onrender.com](https://emotex-ai.onrender.com)**
 
 ## Features
 
